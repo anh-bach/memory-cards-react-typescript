@@ -19,9 +19,13 @@ const Card: FC<CardProps> = ({ card, handleChoice, flipped, disabled }) => {
   return (
     <div className='card'>
       <div className={flipped ? 'flipped' : ''}>
-        <img src={card.src} alt='card front' className='front' />
         <img
-          src='/img/cover.png'
+          src={`${process.env.PUBLIC_URL}${card.src}`}
+          alt='card front'
+          className='front'
+        />
+        <img
+          src={`${process.env.PUBLIC_URL}/img/cover.png`}
           alt='card back'
           className='back'
           onClick={handleCardClick}
